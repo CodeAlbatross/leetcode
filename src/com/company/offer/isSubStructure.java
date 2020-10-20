@@ -31,6 +31,12 @@ package com.company.offer;
  * 输出：true
  */
 public class isSubStructure {
+    /**
+     * 先序遍历每个节点，对和子链根节点数值一致的节点进行check();
+     * @param A
+     * @param B
+     * @return
+     */
     public boolean isSubStructure(TreeNode A, TreeNode B) {
         if (A.left != null){
             boolean a = isSubStructure(A.left,B);

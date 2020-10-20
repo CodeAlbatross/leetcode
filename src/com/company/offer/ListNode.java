@@ -1,9 +1,10 @@
 package com.company.offer;
 
-class ListNode {
+public class ListNode {
     int val;
-    ListNode next;
-    ListNode(int x) {
+    public ListNode next;
+    ListNode(){}
+    public ListNode(int x) {
         val = x;
         next = null;
     }
