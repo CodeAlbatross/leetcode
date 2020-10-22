@@ -16,7 +16,7 @@ package com.company;
  */
 public class sumOfLeftLeaves {
     int sum = 0;
-    public int sumOfLeftLeaves(Main.TreeNode root) {
+    public int sumOfLeftLeaves(TreeNode root) {
         if (root == null)
             return sum;
         if (root.left == null && root.right == null){
@@ -25,7 +25,7 @@ public class sumOfLeftLeaves {
         dfs(root);
         return sum;
     }
-    public void dfs(Main.TreeNode treeNode){
+    public void dfs(TreeNode treeNode){
         if (treeNode.left == null && treeNode.right == null)
             return;
         if ((treeNode.left != null && treeNode.left.left == null) && treeNode.left.right == null){

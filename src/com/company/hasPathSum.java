@@ -21,13 +21,13 @@ package com.company;
  */
 public class hasPathSum {
     boolean aBoolean = false;
-    public boolean hasPathSum(Main.TreeNode root, int sum) {
+    public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null)
             return false;
         dfs(root,sum,0);
         return aBoolean;
     }
-    public void dfs(Main.TreeNode treeNode, int sum, int temp){
+    public void dfs(TreeNode treeNode, int sum, int temp){
         if (treeNode == null){
             return;
         }

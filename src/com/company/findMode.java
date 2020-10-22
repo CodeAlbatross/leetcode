@@ -29,7 +29,7 @@ public class findMode {
     // 用 answer 数组记录出现的众数
     int count = 0, base = 0, maxCount = 0;
     List<Integer> list = new ArrayList<>();
-    public int[] findMode(Main.TreeNode root) {
+    public int[] findMode(TreeNode root) {
         if (root == null)
             return new int[1];
         MorrisIn(root);
@@ -52,11 +52,11 @@ public class findMode {
      *
      * @param root
      */
-    public void MorrisIn(Main.TreeNode root){
+    public void MorrisIn(TreeNode root){
         if (root == null)
             return;
-        Main.TreeNode cur = root;
-        Main.TreeNode pre = null;
+        TreeNode cur = root;
+        TreeNode pre = null;
         while (cur != null){
             pre = cur.left;
             if (pre != null){

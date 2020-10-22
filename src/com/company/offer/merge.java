@@ -1,5 +1,7 @@
 package com.company.offer;
 
+import com.company.ListNode;
+
 public class merge {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);

@@ -26,11 +26,11 @@ import java.util.List;
  */
 public class buildTree {
 
-    public Main.TreeNode buildTree(int[] inorder, int[] postorder) {
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
         if (inorder.length == 0)
             return null;
         if (inorder.length == 1)
-            return new Main.TreeNode(inorder[0]);
+            return new TreeNode(inorder[0]);
 
         return build(0,inorder.length-1,0, postorder.length-1, inorder, postorder);
 
@@ -53,13 +53,13 @@ public class buildTree {
      * @param postorder
      * @return
      */
-    private static Main.TreeNode build(int a, int b,int c, int d, int[] inorder, int[] postorder) {
+    private static TreeNode build(int a, int b,int c, int d, int[] inorder, int[] postorder) {
         if (a > b || a > inorder.length || a < 0 || b < 0 || d < 0 || d > inorder.length)
             return null;
         if (a == b)
-            return new Main.TreeNode(inorder[a]);
+            return new TreeNode(inorder[a]);
         int index = index(inorder, postorder[d]);
-        Main.TreeNode treeNode = new Main.TreeNode(postorder[d]);
+        TreeNode treeNode = new TreeNode(postorder[d]);
         treeNode.left = build(a,index-1, c, index - a + c-1,inorder,postorder);
         treeNode.right = build(index+1,b, c + index - a,d-1,inorder,postorder);
         return treeNode;

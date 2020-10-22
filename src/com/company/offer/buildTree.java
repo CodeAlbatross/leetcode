@@ -1,5 +1,5 @@
 package com.company.offer;
-
+import com.company.*;
 /**
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
  *
@@ -18,18 +18,7 @@ package com.company.offer;
  *    15   7
  *
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+
 public class buildTree {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return build(0, preorder.length-1, 0, inorder.length-1, preorder, inorder);

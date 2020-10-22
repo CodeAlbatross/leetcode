@@ -6,7 +6,7 @@ import java.util.List;
 public class pathSum {
     List<List<Integer>> lists = new ArrayList<>();
     List<Integer> list = new ArrayList<>();
-    public List<List<Integer>> pathSum(Main.TreeNode root, int sum) {
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
 
         if (root == null)
             return lists;
@@ -14,7 +14,7 @@ public class pathSum {
         return lists;
 
     }
-    public void dfs(Main.TreeNode treeNode, int sum, int temp){
+    public void dfs(TreeNode treeNode, int sum, int temp){
         if (treeNode == null){
             return;
         }

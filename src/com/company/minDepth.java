@@ -22,16 +22,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class minDepth {
-    public int minDepth(Main.TreeNode root) {
+    public int minDepth(TreeNode root) {
         if (root == null){
             return 0;
         }
-        Queue<Main.TreeNode> queue  = new LinkedList<>();
+        Queue<TreeNode> queue  = new LinkedList<>();
         int front = -1,rear = -1;
         int last = 0,level = 0;
         queue.offer(root);
         ++rear;
-        Main.TreeNode p;
+        TreeNode p;
         while (!queue.isEmpty()){
             p = queue.poll();
             ++front;

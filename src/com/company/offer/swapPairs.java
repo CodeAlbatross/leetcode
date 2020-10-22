@@ -1,5 +1,7 @@
 package com.company.offer;
 
+import com.company.ListNode;
+
 /**
  * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
  *

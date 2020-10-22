@@ -1,5 +1,7 @@
 package com.company.offer;
 
+import com.company.ListNode;
+
 public class deleteNode {
     public ListNode deleteNode(ListNode head, int val) {
         if (head.val == val) {

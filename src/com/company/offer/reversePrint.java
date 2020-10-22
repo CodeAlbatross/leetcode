@@ -2,6 +2,8 @@ package com.company.offer;
 
 
 
+import com.company.ListNode;
+
 import java.util.Stack;
 
 /**

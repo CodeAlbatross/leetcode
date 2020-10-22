@@ -19,25 +19,25 @@ package com.company;
  *
  */
 public class sortedArrayToBST {
-    public Main.TreeNode sortedArrayToBST(int[] nums) {
+    public TreeNode sortedArrayToBST(int[] nums) {
         if (nums.length == 0)
             return null;
         if (nums.length == 1)
-            return new Main.TreeNode(nums[0]);
-        Main.TreeNode treeNode = new Main.TreeNode(nums[(nums.length-1)/2]);
+            return new TreeNode(nums[0]);
+        TreeNode treeNode = new TreeNode(nums[(nums.length-1)/2]);
         creat(nums,0, (nums.length-1)/2-1, treeNode);
         creat(nums,(nums.length-1)/2+1,nums.length-1,treeNode);
         return treeNode;
     }
-    public void creat(int[] nums, int start, int end, Main.TreeNode treeNode){
+    public void creat(int[] nums, int start, int end, TreeNode treeNode){
         if (start > end)
             return;
         if (nums[(start+end)/2] < treeNode.val){
-            treeNode.left = new Main.TreeNode(nums[(start+end)/2]);
+            treeNode.left = new TreeNode(nums[(start+end)/2]);
             creat(nums,start,(start+end)/2-1,treeNode.left);
             creat(nums,(start+end)/2+1,end,treeNode.left);
         }else {
-            treeNode.right = new Main.TreeNode(nums[(start+end)/2]);
+            treeNode.right = new TreeNode(nums[(start+end)/2]);
             creat(nums,start,(start+end)/2-1,treeNode.right);
             creat(nums,(start+end)/2+1,end,treeNode.right);
         }
