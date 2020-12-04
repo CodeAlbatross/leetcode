@@ -20,7 +20,6 @@ public class countRangeSum {
      * @return
      */
     public int countRangeSum(int[] nums, int lower, int upper) {
-
         int count = 0;
         for (int i = 0; i < nums.length; ++i){
             long sum = nums[i];
@@ -30,7 +29,6 @@ public class countRangeSum {
                 if (sum <= upper && sum >= lower){
                     ++count;
                 }
-
             }
         }
         return count;
