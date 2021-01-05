@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class splitIntoFibonacci {
+<<<<<<< HEAD
     /**
      * 842. 将数组拆分成斐波那契序列
      * 给定一个数字字符串 S，比如 S = "123456579"，我们可以将它分成斐波那契式的序列 [123, 456, 579]。
@@ -43,11 +44,14 @@ public class splitIntoFibonacci {
      * @param S
      * @return
      */
+=======
+>>>>>>> d0cb0aebd7b28158d297314fce994c83b2e23fbe
     public List<Integer> splitIntoFibonacci(String S) {
         List<Integer> list = new ArrayList<>();
         backTrack(0,list,S);
         return list;
     }
+<<<<<<< HEAD
 
     /**
      * 回溯法
@@ -85,13 +89,40 @@ public class splitIntoFibonacci {
                     return true;
                 }
                 //否则回溯
+=======
+    private boolean backTrack(int index, List<Integer> list, String S){
+        if (index == S.length() && list.size() >= 3){
+            return true;
+        }
+        for (int i = index; i < S.length(); i++){
+            if (S.charAt(i) == '0' && i > index){
+                break;
+            }
+            long num = Long.parseLong(S.substring(index,i+1));
+            if (num > Integer.MAX_VALUE){
+                break;
+            }
+            int size = list.size();
+            if (size >= 2 && num > list.get(size-1)+ list.get(size-2)){
+                break;
+            }
+            if (size <= 1 || num == list.get(size-1)+ list.get(size-2)){
+                list.add((int)num);
+                if (backTrack(i+1,list,S))
+                    return true;
+>>>>>>> d0cb0aebd7b28158d297314fce994c83b2e23fbe
                 list.remove(list.size()-1);
             }
         }
         return false;
     }
     public static void main(String... args){
+<<<<<<< HEAD
         System.out.println(new splitIntoFibonacci().splitIntoFibonacci("0123"));
     }
 
+=======
+        System.out.println(new splitIntoFibonacci().splitIntoFibonacci("123456579"));
+    }
+>>>>>>> d0cb0aebd7b28158d297314fce994c83b2e23fbe
 }
