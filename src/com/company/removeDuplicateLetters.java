@@ -29,7 +29,7 @@ public class removeDuplicateLetters {
         Deque<Character> deque = new LinkedList<>();
         for(int i = 0; i < length; ++i){
             char c = s.charAt(i);
-            //约束条件，队列不空，队头元素在整个字符串中有相同元素，高位（遍历的字符）小于低位（队头）（设右边高位），遍历的字符未入队时，队头出队
+            //约束条件，队列不空，队尾元素在整个字符串中有相同元素，高位（遍历的字符）小于低位（队尾）（设右边高位），遍历的字符未入队时，队尾出队
             while(!deque.isEmpty() && c < deque.peekLast() && chars[deque.peekLast() - 'a'] > 1 && !deque.contains(c)){
                 //出队
                 --chars[deque.peekLast() - 'a'];
