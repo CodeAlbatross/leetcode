@@ -1,13 +1,9 @@
 package com.company;
 
-import org.w3c.dom.ls.LSOutput;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
-import java.util.Deque;
-import java.util.LinkedList;
 
 public class Main{
+<<<<<<< HEAD
     
     public static void main(String[] args) {
         short a=50;
@@ -17,6 +13,18 @@ public class Main{
         System.out.printf("%hu\n",a-c);
 
 
+=======
+    public static void main(String[] args) {
+        test s = new test();
+        System.out.println(s.getA());
+>>>>>>> temp
     }
 
+}
+class test{
+    int a;
+
+    public int getA() {
+        return a;
+    }
 }

@@ -33,6 +33,7 @@ public class lengthOfLongestSubstring {
      * @return
      */
     public int lengthOfLongestSubstring(String s) {
+<<<<<<< HEAD
         int maxLength = 0;
         int length = 0;
         int[] indexes = new int[128];
@@ -53,5 +54,8 @@ public class lengthOfLongestSubstring {
     }
     public static void main(String ... args){
         System.out.println(new lengthOfLongestSubstring().lengthOfLongestSubstring("aaab"));
+=======
+        return 0;
+>>>>>>> temp
     }
 }
