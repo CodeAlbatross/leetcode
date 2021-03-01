@@ -1,6 +1,6 @@
 package com.company;
 
-public class rotate {
+public class rotate2D {
     /**
      * 48. 旋转图像
      * 给定一个 n × n 的二维矩阵表示一个图像。
@@ -78,6 +78,6 @@ public class rotate {
         matrix[x][y] = temp3;
     }
     public static void main(String... args){
-        new rotate().rotate(new int[][]{{1,2},{3,4}});
+        new rotate2D().rotate(new int[][]{{1,2},{3,4}});
     }
 }
