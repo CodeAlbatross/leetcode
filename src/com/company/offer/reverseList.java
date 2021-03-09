@@ -1,6 +1,6 @@
 package com.company.offer;
 
-import com.company.ListNode;
+import com.company.normal.ListNode;
 
 /**
  * 剑指 Offer 24. 反转链表

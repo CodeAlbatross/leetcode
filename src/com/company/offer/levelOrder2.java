@@ -1,6 +1,6 @@
 package com.company.offer;
 
-import com.company.TreeNode;
+import com.company.normal.TreeNode;
 
 import java.util.*;
 

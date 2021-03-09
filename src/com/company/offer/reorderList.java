@@ -1,6 +1,6 @@
 package com.company.offer;
 
-import com.company.ListNode;
+import com.company.normal.ListNode;
 
 /**
  * 143. 重排链表

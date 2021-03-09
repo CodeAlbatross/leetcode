@@ -1,6 +1,6 @@
 package com.company.offer;
 
-import com.company.ListNode;
+import com.company.normal.ListNode;
 
 /**
  *剑指 Offer 22. 链表中倒数第k个节点

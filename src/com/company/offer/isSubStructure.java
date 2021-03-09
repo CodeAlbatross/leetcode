@@ -1,6 +1,6 @@
 package com.company.offer;
 
-import com.company.TreeNode;
+import com.company.normal.TreeNode;
 
 /**
  * 剑指 Offer 26. 树的子结构
