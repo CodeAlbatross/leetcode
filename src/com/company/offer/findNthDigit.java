@@ -25,7 +25,7 @@ public class findNthDigit {
      *
      *     例如 2901 = 9 + 180 + 2700 + 12 即一定是4位数,第12位   n = 12;
      *     数据为 = 1000 + (12 - 1)/ 4  = 1000 + 2 = 1002
-     *     定位1002中的位置 = (n - 1) %  4 = 3    s.charAt(3) = 2;
+     *     定位1002中的位置 = (12 - 1) %  4 = 3    s.charAt(3) = 2;
      *
      */
     public int findNthDigit(int n) {
@@ -33,7 +33,7 @@ public class findNthDigit {
             return 0;
         int digit = 1;//占的位数1，2，3。。。
         long count = 9;//不同位数的数字占的总位数9，180，2700
-        long start = 1;//不同位数数字的第一个数字
+        long start = 1;//不同位数数字的第一个数字1,10,1000,10000
         while (n > count){
             n -= count;
             start *= 10;

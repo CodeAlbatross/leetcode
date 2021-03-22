@@ -61,6 +61,7 @@ public class minNumber {
             ∴  可推出 xz < zx ，传递性证毕
          */
         num.sort((s1, s2) -> (s1 + s2).compareTo(s2 + s1));
+
         /*StringBuffer stringBuffer = new StringBuffer();
         for (String s : num){
             stringBuffer.append(s);

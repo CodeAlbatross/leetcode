@@ -22,7 +22,7 @@ public class permutation {
     public String[] permutation(String s) {
         c = s.toCharArray();
         dfs(0);
-        return list.toArray(new String[list.size()]);
+        return list.toArray(new String[0]);
     }
     private void dfs(int x){
         if (x == c.length -1){
@@ -34,7 +34,7 @@ public class permutation {
             if (hashSet.contains(c[i]))
                 continue;
             hashSet.add(c[i]);
-            //在每一层交换这个元素和他后面的每一个元素
+            //在每一层交换这个元素和他后面的每一个元素,分别作为字符串的下一位
             swap(i,x);
             dfs(x+1);
             swap(i,x);

@@ -14,7 +14,7 @@ import com.company.normal.ListNode;
  * 输出: 5->4->3->2->1->NULL
  */
 public class reverseList {
-    
+    //相当于先生成一个头节点，之后用头插法完成逆转
     public ListNode reverseList(ListNode head) {
         ListNode listNode = new ListNode(0);
         listNode.next = null;

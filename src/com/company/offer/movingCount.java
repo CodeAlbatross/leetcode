@@ -1,7 +1,13 @@
 package com.company.offer;
 
 /**
- * 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+ * 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。
+ * 一个机器人从坐标 [0, 0] 的格子开始移动，
+ * 它每次可以向左、右、上、下移动一格（不能移动到方格外），
+ * 也不能进入行坐标和列坐标的数位之和大于k的格子。
+ * 例如，当k为18时，机器人能够进入方格 [35, 37] ，
+ * 因为3+5+3+7=18。但它不能进入方格 [35, 38]，
+ * 因为3+5+3+8=19。请问该机器人能够到达多少个格子？
  *
  *
  * 示例 1：
@@ -23,14 +29,15 @@ public class movingCount {
         return count;
     }
     private void dfs(int m, int n, int k, int x, int y, int[][] visited){
-        if (x < 0 || x > m || y < 0 || y > n || ok(k,x,y) || visited[x][y] != 0){
+        if (x < 0 || x > m-1 || y < 0 || y > n-1 || ok(k,x,y) || visited[x][y] != 0){
             return;
         }
         count++;
+        visited[x][y] = 1;
         for (int i = 0; i < xs.length; i++){
-            visited[x][y] = 1;
+
             dfs(m,n,k,x+xs[i],y+ys[i],visited);
-            //visited[x][y] = 0;
+            //visited[x][y] = 0;//此处不能回复现场，因为如果恢复了，别的路径就可能再次访问这个块造成重复
         }
     }
     private boolean ok(int k, int i, int j){

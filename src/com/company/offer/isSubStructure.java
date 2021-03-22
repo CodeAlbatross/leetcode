@@ -54,6 +54,7 @@ public class isSubStructure {
         if (A.right != null){
             return isSubStructure(A.right,B);
         }
+
         return false;
     }
 
@@ -84,4 +85,5 @@ public class isSubStructure {
         }
         return true;
     }
+
 }
