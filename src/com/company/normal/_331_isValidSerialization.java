@@ -10,24 +10,24 @@ public class _331_isValidSerialization {
         int i = 0;
         while (i < len) {
             char c = preorder.charAt(i);
-            switch (c){
+            switch (c) {
                 case ',' -> ++i;
                 case '#' -> {
-                    if (!stack.isEmpty() && stack.peek() == '#'){
+                    if (!stack.isEmpty() && stack.peek() == '#') {
                         stack.pop();
-                        if (stack.isEmpty()){
+                        if (stack.isEmpty()) {
                             return false;
-                        }else {
+                        } else {
                             stack.pop();
                         }
-                    }else {
+                    } else {
                         stack.push(c);
                         ++i;
                     }
                 }
                 default -> {
                     stack.push(c);
-                    while (i < len && preorder.charAt(i) >= '0'){
+                    while (i < len && preorder.charAt(i) >= '0') {
                         ++i;
                     }
 

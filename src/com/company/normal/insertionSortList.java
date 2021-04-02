@@ -3,6 +3,7 @@ package com.company.normal;
 public class insertionSortList {
     /**
      * 单链表插入排序
+     *
      * @param head
      * @return
      */
@@ -11,23 +12,23 @@ public class insertionSortList {
             return head;
         ListNode insert = head.next;
         ListNode sortHead = head;//排序头
-        ListNode sortRear= head;//排序尾
+        ListNode sortRear = head;//排序尾
 
-        while (insert != null){
+        while (insert != null) {
             ListNode temp = sortHead;
-            if (insert.val <= temp.val){
+            if (insert.val <= temp.val) {
                 sortRear.next = insert.next;
                 insert.next = sortHead;
                 sortHead = insert;
                 insert = sortRear.next;
                 continue;
             }
-            if (insert.val >= sortRear.val){
+            if (insert.val >= sortRear.val) {
                 sortRear = insert;
                 insert = insert.next;
                 continue;
             }
-            while (insert != null && temp != sortRear && temp.next.val < insert.val ){
+            while (insert != null && temp != sortRear && temp.next.val < insert.val) {
                 temp = temp.next;
             }
             sortRear.next = insert.next;

@@ -15,22 +15,22 @@ public class Codec {
         List<Integer> list = new ArrayList<>();
         queue.offer(root);
         list.add(root.val);
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode treeNode = queue.poll();
 
-            if(treeNode == null){
+            if (treeNode == null) {
                 list.add(null);
                 continue;
-            }else{
+            } else {
                 list.add(treeNode.val);
             }
             queue.offer(treeNode.left);
             queue.offer(treeNode.right);
         }
-        for(int i = list.size()-1; i>=0; i--){
+        for (int i = list.size() - 1; i >= 0; i--) {
             if (list.get(i) == null) {
                 list.remove(i);
-            }else{
+            } else {
                 break;
             }
         }
@@ -39,26 +39,27 @@ public class Codec {
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        String[] strs = data.substring(1,data.length()-1).split(",");
+        String[] strs = data.substring(1, data.length() - 1).split(",");
         TreeNode root = new TreeNode(Integer.parseInt(strs[0]));
         root.left = treeCreate(1, strs);
-        root.right = treeCreate(2,strs);
+        root.right = treeCreate(2, strs);
         int a = 0;
         return root;
     }
-    private TreeNode treeCreate(int begin, String[] strs){
-        if(begin >= strs.length || strs[begin].equals("null")){
+
+    private TreeNode treeCreate(int begin, String[] strs) {
+        if (begin >= strs.length || strs[begin].equals("null")) {
             return null;
         }
         TreeNode root = new TreeNode(Integer.parseInt(strs[begin]));
         int n = 0;
-        for (int i = 0; i < begin; i++){
-            if (strs[i].equals("null")){
+        for (int i = 0; i < begin; i++) {
+            if (strs[i].equals("null")) {
                 ++n;
             }
         }
-        root.left = treeCreate((begin-n)*2+1, strs);
-        root.right = treeCreate((begin-n)*2+2,strs);
+        root.left = treeCreate((begin - n) * 2 + 1, strs);
+        root.right = treeCreate((begin - n) * 2 + 2, strs);
 
 
         return root;

@@ -10,7 +10,7 @@ public class findMinArrowShots {
         Arrays.sort(points, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return Integer.compare(o1[1],o2[1]);
+                return Integer.compare(o1[1], o2[1]);
             }
         });
         int count = 0;

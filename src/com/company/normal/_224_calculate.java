@@ -7,21 +7,22 @@ public class _224_calculate {
     /**
      * 224. 基本计算器
      * 实现一个基本的计算器来计算一个简单的字符串表达式 s 的值。
-     *
-     *
-     *
+     * <p>
+     * <p>
+     * <p>
      * 示例 1：
-     *
+     * <p>
      * 输入：s = "1 + 1"
      * 输出：2
      * 示例 2：
-     *
+     * <p>
      * 输入：s = " 2-1 + 2 "
      * 输出：3
      * 示例 3：
-     *
+     * <p>
      * 输入：s = "(1+(4+5+2)-3)+(6+8)"
      * 输出：23
+     *
      * @param s
      * @return
      */
@@ -36,15 +37,15 @@ public class _224_calculate {
         int sign = 1;
         int len = s.length();
         int i = 0;
-        while (i < len){
+        while (i < len) {
             char c = s.charAt(i);
-            switch (c){
+            switch (c) {
                 case ' ' -> i++;
                 case '+' -> {
                     sign = stack.peek();
                     ++i;
                 }
-                case '-' ->{
+                case '-' -> {
                     sign = -stack.peek();
                     ++i;
                 }
@@ -52,13 +53,13 @@ public class _224_calculate {
                     stack.push(sign);
                     ++i;
                 }
-                case ')' ->{
+                case ')' -> {
                     stack.pop();
                     ++i;
                 }
                 default -> {
                     long num = 0;
-                    while (i < len && Character.isDigit(s.charAt(i))){
+                    while (i < len && Character.isDigit(s.charAt(i))) {
                         num = num * 10 + s.charAt(i) - '0';
                         ++i;
                     }

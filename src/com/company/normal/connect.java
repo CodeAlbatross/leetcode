@@ -7,35 +7,36 @@ import java.util.Queue;
 public class connect {
     /**
      * 用队列
+     *
      * @param root
      * @return
      */
-    public Node connect(Node root){
-        if (root == null){
+    public Node connect(Node root) {
+        if (root == null) {
             return null;
         }
-        Queue<Node> queue  = new LinkedList<>();
-        int front = -1,rear = -1;
+        Queue<Node> queue = new LinkedList<>();
+        int front = -1, rear = -1;
         int last = 0;
         queue.offer(root);
         ++rear;
         Node p;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             p = queue.poll();
             ++front;
 
-            if (p.left != null){
+            if (p.left != null) {
                 queue.offer(p.left);
                 ++rear;
             }
-            if (p.right != null){
+            if (p.right != null) {
                 queue.offer(p.right);
                 ++rear;
             }
 
-            if (front == last){
+            if (front == last) {
                 last = rear;
-            }else {
+            } else {
                 p.next = queue.peek();
             }
         }
@@ -47,6 +48,7 @@ public class connect {
      * 不用队列
      */
     private Node last = null, nextStart = null;
+
     public Node connect2(Node root) {
         if (root == null) {
             return null;

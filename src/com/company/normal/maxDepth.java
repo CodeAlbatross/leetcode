@@ -7,33 +7,37 @@ import java.util.Queue;
  * @author Administrator
  */
 public class maxDepth {
-    public static class TreeNode{
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
+
     public int maxDepth(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return 0;
         }
-        Queue<TreeNode> queue  = new LinkedList<>();
-        int front = -1,rear = -1;
-        int last = 0,level = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        int front = -1, rear = -1;
+        int last = 0, level = 0;
         queue.offer(root);
         ++rear;
         TreeNode p;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             p = queue.poll();
             ++front;
 
-            if (p != null){
+            if (p != null) {
                 queue.offer(p.left);
                 ++rear;
                 queue.offer(p.right);
                 ++rear;
             }
-            if (front == last){
+            if (front == last) {
                 ++level;
                 last = rear;
             }

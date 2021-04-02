@@ -3,20 +3,20 @@ package com.company.byteDance;
 import java.util.Arrays;
 
 /**
- *   字符串的排列
+ * 字符串的排列
  * 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
- *
+ * <p>
  * 换句话说，第一个字符串的排列之一是第二个字符串的子串。
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入: s1 = "ab" s2 = "eidbaooo"
  * 输出: True
  * 解释: s2 包含 s1 的排列之一 ("ba").
  * 示例 2：
- *
+ * <p>
  * 输入: s1= "ab" s2 = "eidboaoo"
  * 输出: False
  */
@@ -35,7 +35,7 @@ public class checkInclusion {
         for (int i = length1; i < length2; i++) {
             if (Arrays.equals(table1, table2)) {
                 return true;
-            }else {
+            } else {
                 table2[s2.charAt(i - length1) - 'a'] -= 1;
                 table2[s2.charAt(i) - 'a'] += 1;
             }
@@ -44,6 +44,6 @@ public class checkInclusion {
     }
 
     public static void main(String[] args) {
-        System.out.println(new checkInclusion().checkInclusion("adc","dcda"));
+        System.out.println(new checkInclusion().checkInclusion("adc", "dcda"));
     }
 }

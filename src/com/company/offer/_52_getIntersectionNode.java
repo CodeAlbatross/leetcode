@@ -5,39 +5,38 @@ import com.company.normal.ListNode;
 /**
  * 剑指 Offer 52. 两个链表的第一个公共节点
  * 输入两个链表，找出它们的第一个公共节点。
- *
  */
 public class _52_getIntersectionNode {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode pointA = headA;
         ListNode pointB = headB;
         int a = 0, b = 0;
-        while (pointA != null){
+        while (pointA != null) {
             ++a;
             pointA = pointA.next;
         }
-        while (pointB != null){
+        while (pointB != null) {
             ++b;
             pointB = pointB.next;
         }
-        if (a > b){
+        if (a > b) {
             a -= b;
-            while (a != 0){
+            while (a != 0) {
                 headA = headA.next;
                 --a;
             }
-        }else if (b > a){
-            b-=a;
-            while (b != 0){
+        } else if (b > a) {
+            b -= a;
+            while (b != 0) {
                 headB = headB.next;
                 --b;
             }
-        }else {
+        } else {
             if (headA == headB)
-                return headA ;
+                return headA;
         }
-        while (headA != null && headB != null){
-            if (headA == headB){
+        while (headA != null && headB != null) {
+            if (headA == headB) {
                 return headA;
             }
             headA = headA.next;
@@ -45,11 +44,12 @@ public class _52_getIntersectionNode {
         }
         return null;
     }
-    public ListNode getIntersectionNode2(ListNode headA, ListNode headB){
+
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
         ListNode h1 = headA;
         ListNode h2 = headB;
 
-        while (h1 != h2){
+        while (h1 != h2) {
             h1 = h1 == null ? headA : h1.next;
             h2 = h2 == null ? headB : h2.next;
         }

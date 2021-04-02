@@ -1,8 +1,11 @@
 package com.company.normal;
 
 class MyHashSet {
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     boolean[] hash;
+
     public MyHashSet() {
         hash = new boolean[1000005];
     }
@@ -12,10 +15,12 @@ class MyHashSet {
     }
 
     public void remove(int key) {
-        hash[key]  =false;
+        hash[key] = false;
     }
 
-    /** Returns true if this set contains the specified element */
+    /**
+     * Returns true if this set contains the specified element
+     */
     public boolean contains(int key) {
         return hash[key];
     }

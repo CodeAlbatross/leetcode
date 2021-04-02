@@ -5,6 +5,7 @@ import java.util.Queue;
 
 class CQueue {
     Queue<Integer> queue = new LinkedList<>();
+
     public CQueue() {
 
     }
@@ -14,9 +15,9 @@ class CQueue {
     }
 
     public int deleteHead() {
-        if (queue.isEmpty()){
+        if (queue.isEmpty()) {
             return -1;
-        }else {
+        } else {
             return queue.poll();
         }
 

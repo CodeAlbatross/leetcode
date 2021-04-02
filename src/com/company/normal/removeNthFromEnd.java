@@ -9,15 +9,15 @@ public class removeNthFromEnd {
             return null;
         ListNode listNode1 = head;
         ListNode listNode2 = head;
-        while (n > 0){
+        while (n > 0) {
             listNode2 = listNode2.next;
             --n;
         }
-        if (listNode2 == null){
+        if (listNode2 == null) {
             head = head.next;
             return head;
         }
-        while (listNode2 != null && listNode2.next != null){
+        while (listNode2 != null && listNode2.next != null) {
             listNode1 = listNode1.next;
             listNode2 = listNode2.next;
         }

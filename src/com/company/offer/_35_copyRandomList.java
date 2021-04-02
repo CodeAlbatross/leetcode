@@ -20,15 +20,16 @@ class copyRandomList {
     /**
      * 原地复制，1->2->3->null 变成 1->1->2->2->3->3->null
      * 然后再拆分
+     *
      * @param head
      * @return
      */
     public RandomNode copyRandomList(RandomNode head) {
-        if(head == null)
+        if (head == null)
             return null;
         RandomNode cur = head;
         //复制
-        while(cur != null){
+        while (cur != null) {
             RandomNode temp = cur.next;
             cur.next = new RandomNode(cur.val);
             cur.next.next = temp;
@@ -36,10 +37,10 @@ class copyRandomList {
         }
         cur = head;
         //赋random
-        while(cur != null){
-            if(cur.random != null){
+        while (cur != null) {
+            if (cur.random != null) {
                 cur.next.random = cur.random.next;
-            }else{
+            } else {
                 cur.next.random = null;
             }
             cur = cur.next.next;
@@ -48,7 +49,7 @@ class copyRandomList {
         RandomNode curO = head;
         cur = head.next;
         RandomNode curTemp = cur;
-        while(curTemp != null && curTemp.next != null){
+        while (curTemp != null && curTemp.next != null) {
             RandomNode temp = curTemp.next.next;
             RandomNode temp2 = curO.next.next;
             curO.next = temp2;

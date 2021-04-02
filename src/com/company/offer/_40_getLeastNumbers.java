@@ -14,18 +14,18 @@ public class _40_getLeastNumbers {
      * @return -
      */
     public int[] getLeastNumbers(int[] arr, int k) {
-        Queue<Integer> bigHeap = new PriorityQueue<>((a,b) -> b-a);//默认小顶堆,切换到大顶堆
-        for (int num : arr){
-            if (bigHeap.size() < k){
+        Queue<Integer> bigHeap = new PriorityQueue<>((a, b) -> b - a);//默认小顶堆,切换到大顶堆
+        for (int num : arr) {
+            if (bigHeap.size() < k) {
                 bigHeap.offer(num);
-            }else if(num < bigHeap.peek()){
-                    bigHeap.poll();
-                    bigHeap.offer(num);
-                }
+            } else if (num < bigHeap.peek()) {
+                bigHeap.poll();
+                bigHeap.offer(num);
+            }
         }
         int[] res = new int[bigHeap.size()];
         int i = 0;
-        while (!bigHeap.isEmpty()){
+        while (!bigHeap.isEmpty()) {
             res[i++] = bigHeap.poll();
         }
         return res;

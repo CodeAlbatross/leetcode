@@ -2,10 +2,10 @@ package com.company.offer;
 
 public class myPow {
     public double myPow(double x, int n) {
-        if(n >= 0) {
+        if (n >= 0) {
             return myPowPositive(x, n);
-        }else{
-            return 1.0/myPowPositive(x,n);
+        } else {
+            return 1.0 / myPowPositive(x, n);
         }
 
     }
@@ -17,13 +17,13 @@ public class myPow {
         if (n < 0)
             n = -n;
         double result = 1;
-        while (n > 0){
-            if ((n & 1) == 1){
+        while (n > 0) {
+            if ((n & 1) == 1) {
                 result = result * x;
                 --n;
             }
             n >>= 1;
-            x =  x * x;
+            x = x * x;
         }
         return result;
     }

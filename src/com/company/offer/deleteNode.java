@@ -8,8 +8,8 @@ public class deleteNode {
             head = head.next;
         }
         ListNode listNode = head;
-        while (listNode.next != null){
-            if (listNode.next.val == val){
+        while (listNode.next != null) {
+            if (listNode.next.val == val) {
                 listNode.next = listNode.next.next;
             }
             listNode = listNode.next;

@@ -6,21 +6,21 @@ import java.util.LinkedList;
 /**
  * 227. 基本计算器 II
  * 给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。
- *
+ * <p>
  * 整数除法仅保留整数部分。
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入：s = "3+2*2"
  * 输出：7
  * 示例 2：
- *
+ * <p>
  * 输入：s = " 3/2 "
  * 输出：1
  * 示例 3：
- *
+ * <p>
  * 输入：s = " 3+5 / 2 "
  * 输出：5
  */
@@ -32,11 +32,11 @@ public class _227_calculate {
         int num = 0;
         for (int i = 0; i < len; i++) {
             char c = s.charAt(i);
-            if (c >= '0'){
+            if (c >= '0') {
                 num = c - '0' + num * 10;
             }
-            if ((c < '0' && c != ' ') || i == len - 1){
-                switch (sign){
+            if ((c < '0' && c != ' ') || i == len - 1) {
+                switch (sign) {
                     //符号为+将数字直接入栈
                     case '+' -> stack.push(num);
                     //符号为
@@ -52,10 +52,10 @@ public class _227_calculate {
                 sign = c;
             }
         }
-        int ret=0;
+        int ret = 0;
         //将栈中剩下的数字相加即为结果
-        while (!stack.isEmpty()){
-            ret+=stack.pop();
+        while (!stack.isEmpty()) {
+            ret += stack.pop();
         }
         return ret;
     }
