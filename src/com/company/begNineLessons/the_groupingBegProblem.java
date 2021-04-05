@@ -1,7 +1,5 @@
 package com.company.begNineLessons;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class the_groupingBegProblem {
