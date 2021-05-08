@@ -17,10 +17,11 @@ public class MissionPlan {
     }
     public static void main(String[] args) {
 
-        int[][] missions = new int[][]{{4,70},{2,60},{4,50},{3,40},{1,30},{4,20},{6,10}};
+        //int[][] missions = new int[][]{{4,70},{2,60},{4,50},{3,40},{1,30},{4,20},{6,10}};
+        int[][] missions = new int[][]{{2,47},{1,42},{5,37},{4,25},{2,49},{2,49},{6,20}};
         func(missions);
         for (int i = 0; i < missions.length; i++) {
-            missions[i][1] = 70 - missions[i][1];
+            missions[i][1] = 49 - missions[i][1];
         }
         func(missions);
     }
