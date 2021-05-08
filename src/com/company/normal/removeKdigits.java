@@ -67,7 +67,7 @@ public class removeKdigits {
             deque.addLast(c);//入队
         }
 
-        StringBuffer s = new StringBuffer();
+        StringBuilder s = new StringBuilder();
         int m = deque.size() - k;//如果k没有删除完，则相当于保留没有删除完部分的前m位
         while (!deque.isEmpty() && m > 0) {
             char c = deque.pollFirst();
