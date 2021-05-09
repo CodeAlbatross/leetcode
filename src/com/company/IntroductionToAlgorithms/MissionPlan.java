@@ -2,7 +2,9 @@ package com.company.IntroductionToAlgorithms;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//调度队列，主要的思想就是以最大惩罚降序排列，遍历所有任务，
+// 将截止时间任务放入任务队列，如果这个任务的任务队列原位置被占就放入最近的位置，
+// 若位置都满了，则放弃任务
 public class MissionPlan {
     public static class Task{
         public int a;
