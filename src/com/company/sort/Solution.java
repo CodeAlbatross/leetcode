@@ -36,7 +36,7 @@ class Solution {
                 }
             }
             arr[left] = temp;
-            qSort(arr,start,left);
+            qSort(arr,start,left-1);
             qSort(arr,left + 1, end);
         }
     }
